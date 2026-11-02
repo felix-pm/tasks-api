@@ -10,3 +10,4 @@ jobs:
       - run: echo "Push avec message"
       - run: echo "Branche ${{ github.ref_name }}"
       - run: echo "Auteur commit ${{github.actor}}"
+      - run: python --version"
