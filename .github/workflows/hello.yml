@@ -1,0 +1,10 @@
+name: hello
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: echo "Push avec message"
+      - run: echo "Branche ${{ github.ref_name }}"
+      - run: echo "Auteur commit ${{github.actor}}"
