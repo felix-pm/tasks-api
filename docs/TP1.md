@@ -19,11 +19,11 @@ et vous savez lire un run GitHub Actions, y compris quand il échoue.
 
 ### Les commandes qui changent selon votre système
 
-| Action | macOS | Linux | Windows (PowerShell) |
-|---|---|---|---|
-| Créer l'environnement | `python3.12 -m venv .venv` | `python3 -m venv .venv` | `py -3.12 -m venv .venv` |
-| L'activer | `source .venv/bin/activate` | `source .venv/bin/activate` | `.venv\Scripts\Activate.ps1` |
-| Appeler l'API | `curl http://localhost:8000/health` | `curl http://localhost:8000/health` | `curl.exe http://localhost:8000/health` |
+| Action                | macOS                               | Linux                               | Windows (PowerShell)                    |
+| --------------------- | ----------------------------------- | ----------------------------------- | --------------------------------------- |
+| Créer l'environnement | `python3.12 -m venv .venv`          | `python3 -m venv .venv`             | `py -3.12 -m venv .venv`                |
+| L'activer             | `source .venv/bin/activate`         | `source .venv/bin/activate`         | `.venv\Scripts\Activate.ps1`            |
+| Appeler l'API         | `curl http://localhost:8000/health` | `curl http://localhost:8000/health` | `curl.exe http://localhost:8000/health` |
 
 Tout le reste (`git`, `gh`, `pytest`, `pip`) est identique sur les trois systèmes.
 
@@ -56,6 +56,8 @@ puis recommencez le `git push`.
 > 📸 **TP1-1 :** le run « Hello » réussi, avec l'étape qui affiche la branche et l'auteur **dépliée**.
 
 **Questions (à traiter dans le dossier) :** Combien de temps a duré le run ? Où voit-on les logs de chaque étape ?
+
+A voir sur les screen dans le dossier tp1_1 se trouvant dans le dossier `Réponses_screen`
 
 > Indice : la structure minimale est `name`, `on`, `jobs`, puis `runs-on` et `steps`.
 
@@ -91,6 +93,8 @@ puis recommencez le `git push`.
 > 📸 **TP1-4 :** le run vert qui suit la correction.
 
 **Questions (à traiter dans le dossier) :** Quel test a échoué ? À quelle ligne ? Qu'est-ce qui a permis de le trouver rapidement ?
+
+Le test à échoué car le titre n'est pas correct, il est plus long que la longueur max, le test qui à échoué est le suivant : `test_is_valid_title_rejects_too_long()`
 
 ---
 
