@@ -115,6 +115,8 @@ Le test à échoué car le titre n'est pas correct, il est plus long que la long
 
 **Question (à traiter dans le dossier) :** Pourquoi attend-on que la CI soit verte avant de fusionner ?
 
+Pour être sur que tous les tests soient passés, laisser le temps que tout soir bon
+
 ---
 
 ## Partie 5 : Aller plus loin (si vous avez fini)
