@@ -53,6 +53,12 @@ On sépare lint et test en deux jobs pour qu’ils tournent en parallèle et que
 
 **Questions :** Pourquoi tester sur plusieurs versions de Python ? Que gagne-t-on avec le cache ? Un artefact, c'est quoi ?
 
+Plusieurs versions : pour vérifier que le code marche quelle que soit la version de Python de l’utilisateur.
+
+Cache : on ne retélécharge pas les dépendances à chaque fois, donc la CI va plus vite.
+
+Artefact : un fichier produit par un job (rapport, build…) qu’on garde pour le télécharger ou le réutiliser.
+
 ---
 
 ## Partie 3 : Protéger la branche main (15 min)
