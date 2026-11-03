@@ -102,6 +102,8 @@ git push
 
 **Questions :** Pourquoi Git ne peut-il pas résoudre ce conflit seul ? Qu'est-ce qui a vérifié le code après la résolution ?
 
+Git ne peut pas résoudre ce conflit seul, car il y a plusieurs versions possibles du code. C’est l’humain qui doit choisir la bonne version puis vérifier le code et lancer les tests pour valider la résolution.
+
 ---
 
 ## Partie 5 : Un secret dans le pipeline (20 min)
@@ -121,6 +123,8 @@ git push
 
 **Questions :** Pourquoi GitHub masque-t-il le secret ? Que se passe-t-il si on le commite dans le dépôt ? Secret ou variable : comment choisir ?
 
+Un secret ne doit pas être visible dans les logs, car un token exposé peut être récupéré par des bots et utilisé pour accéder à des services. Les secrets servent aux informations sensibles, tandis que les variables sont destinées à des valeurs non sensibles comme l’environnement ou la configuration.
+
 ---
 
 ## Partie 6 : Trois pipelines à réparer (30 min)
@@ -131,6 +135,12 @@ Dans le dossier `pipelines-a-reparer/` : trois workflows (A, B, C) avec **un bug
 > 📸 **TP2-11 :** la liste des runs montrant vos trois pipelines réparés au vert.
 
 **Questions :** Pour chaque pipeline : quel était le bug, comment l'avez-vous trouvé, comment l'éviter à l'avenir ?
+
+1: problème d’indentation, qui apparaît en rouge dans l’éditeur de code. Pour l’expliquer, il suffisait de regarder les logs pour voir qu’il manquait un espace. On aurait pu l’éviter en utilisant un linter.
+
+2: manque l’importation du reste du code du projet. Le fichier n’est pas trouvé parce qu’il n’a pas été importé. Pour éviter cela, il faut toujours partir d’une base déjà existante et ajouter les éléments par-dessus.
+
+3: manque des guillemets autour du numéro de version de Python, donc 3.10 est interprété comme 3.1. Il faut toujours vérifier avant de mettre en ligne.
 
 ---
 
