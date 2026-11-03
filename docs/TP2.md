@@ -31,6 +31,11 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 
 **Questions :** Quelle différence entre un linter (flake8) et un formateur (black) ? Pourquoi séparer `lint` et `test` en deux jobs ?
 
+flake8 : analyse le code et signale les problèmes <br>
+black : réécrit automatiquement la mise en forme du code, sans s’occuper de sa logique
+
+On sépare lint et test en deux jobs pour qu’ils tournent en parallèle et que, en cas d’échec, on sache immédiatement si le problème vient de la façon dont le code est écrit (style, imports inutiles, erreurs évidentes) ou du fait qu’il ne produit pas les résultats attendus.
+
 ---
 
 ## Partie 2 : Matrix, cache et artefact (35 min)
@@ -53,7 +58,7 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 ## Partie 3 : Protéger la branche main (15 min)
 
 1. Sur GitHub : **Settings → Branches** (ou **Rules → Rulesets**) → créez une règle pour la branche `main`.
-2. Cochez : *Require a pull request before merging* et *Require status checks to pass before merging*.
+2. Cochez : _Require a pull request before merging_ et _Require status checks to pass before merging_.
 3. Choisissez comme vérifications obligatoires : `lint` et `test (3.12)`.
    (Un contrôle n'apparaît dans la liste que s'il a tourné récemment : lancez la CI avant.)
 4. Ouvrez une PR depuis `tp2` qui fait échouer volontairement un test, et constatez que la fusion est **bloquée**.
@@ -74,7 +79,7 @@ cache, protection de la branche `main`, travail à deux sur un même dépôt et 
 1. A et B partent **tous les deux** de `main` à jour et créent chacun une branche (`entree-a`, `entree-b`).
 2. Chacun ajoute **une ligne différente** sous « Non publié » dans `CHANGELOG.md`, au **même endroit** (juste sous la première ligne).
 3. Chacun pousse sa branche et ouvre une pull request vers `main`.
-4. **A fusionne** sa PR (CI verte). La PR de B affiche maintenant : *This branch has conflicts*.
+4. **A fusionne** sa PR (CI verte). La PR de B affiche maintenant : _This branch has conflicts_.
 5. **B résout le conflit** dans son terminal :
 
 ```bash
