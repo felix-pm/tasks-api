@@ -75,6 +75,8 @@ Artefact : un fichier produit par un job (rapport, build…) qu’on garde pour 
 
 **Question :** Pourquoi interdire de pousser directement sur `main` ?
 
+Pour eviter d'envoyer directement des erreurs qui sont arrêter par les tests en prod
+
 ---
 
 ## Partie 4 : Pull request croisée et conflit (45 min)
