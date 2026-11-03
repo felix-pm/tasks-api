@@ -3,6 +3,11 @@ on:
   push:
   pull_request:
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: flake8 .
+      - run: black --check .
   test:
     runs-on: ubuntu-latest
     steps:
@@ -11,4 +16,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
-      - run: pytest
+      - run: pytest --cov=app --cov-fail-under=80
