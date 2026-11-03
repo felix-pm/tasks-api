@@ -32,4 +32,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
-      - run: pytest --cov=app --cov-fail-under=80
+      - run: pytest --cov=app --cov-fail-under=80 --cov-report=xml
