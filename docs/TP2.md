@@ -69,6 +69,8 @@ On sépare lint et test en deux jobs pour qu’ils tournent en parallèle et que
 
 **Question :** Pourquoi interdire de pousser directement sur `main` ?
 
+Pour eviter d'envoyer directement des erreurs qui sont arrêter par les tests en prod
+
 ---
 
 ## Partie 4 : Pull request croisée et conflit (45 min)
