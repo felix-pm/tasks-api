@@ -53,6 +53,8 @@ On sépare lint et test en deux jobs pour qu’ils tournent en parallèle et que
 
 **Questions :** Pourquoi tester sur plusieurs versions de Python ? Que gagne-t-on avec le cache ? Un artefact, c'est quoi ?
 
+Car cela permet aux utilisateurs d'être plus libre et il n'a pas besoin d'avoir la version exacte du projet, cela évite de re installer toutes les dépendances. Un artefact est un fichier produit par un job et sauvegardé à la fin du job, pour pouvoir le télécharger ou le réutiliser dans une étape suivante
+
 ---
 
 ## Partie 3 : Protéger la branche main (15 min)

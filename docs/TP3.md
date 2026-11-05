@@ -44,6 +44,8 @@ Contrôles :
 
 **Questions :** Différence entre une image et un conteneur ? À quoi sert le `.dockerignore` ?
 
+L'image est la recette et le container le plat. Le .dockerignore permet de choisir ce qu'on ne veut pas envoyer dans le container.
+
 ---
 
 ## Partie 2 : Docker Compose (20 min)
@@ -63,6 +65,8 @@ Vérifiez que `/version` répond `local`, puis `docker compose down`.
 > 📸 **TP3-2 :** `docker compose up` en cours et le `curl` sur `/version`.
 
 **Question :** Que gagne-t-on à décrire le lancement dans un fichier plutôt que dans une longue commande ?
+
+Car le lancement de l'app sera toujours de la même façon, avec les mêmes ports et version, cela évite les risques.
 
 ---
 
@@ -91,6 +95,8 @@ Poussez sur `main`, puis allez voir votre profil GitHub → **Packages**.
 > 📸 **TP3-4 :** la page du package `tasks-api` avec son tag `sha-…`.
 
 **Questions :** Pourquoi `build` attend-il `test` ? Pourquoi éviter le tag `latest` en production ?
+
+Car il installe python et il permet de ne pas build un test qui ne marche pas.
 
 ---
 
