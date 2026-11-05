@@ -123,6 +123,8 @@ docker run --rm -p 8000:8000 ghcr.io/<votre-compte-minuscules>/tasks-api:0.1.0
 
 **Question :** Quel est l'avantage d'une image versionnée par rapport à « le code de ma machine » ?
 
+L'image est figée et identique partout, on sait exactement ce qui tourne, et on peut revenir à une version précédente en relançant l'ancien tag.
+
 ---
 
 ## Partie 5 : Environnements et approbation (25 min)
@@ -141,6 +143,8 @@ Créez `v0.1.1` (nouveau tag) : le pipeline passe sur staging, puis **attend vot
 
 **Questions :** À quoi sert un test de fumée ? Pourquoi demander une approbation humaine avant la production ?
 
+C'est pour faire des tests rapides en surfaces. Pour qu'un humain donne son accord pour le déploiement.
+
 ---
 
 ## Partie 6 : Sécurité de l'image (10 min)
@@ -152,6 +156,8 @@ Créez `v0.1.1` (nouveau tag) : le pipeline passe sur staging, puis **attend vot
 > 📸 **TP3-8 :** la sortie de la commande `id` dans le conteneur.
 
 **Question :** Pourquoi ne pas exécuter une application en root dans un conteneur ?
+
+Car si l'application ets piratée, l'attaquant à tous les droits dans le conteneur.
 
 ---
 
